@@ -1,0 +1,60 @@
+#accordionMz {
+  .accordion_item {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    .accordion_header {
+      background-color: $primaryColor;
+      padding: ($gap - 1);
+      margin-bottom: 10px;
+      cursor: pointer;
+      position: relative;
+      min-height: 55px;
+      letter-spacing: 0.4px;
+      border-bottom: solid 2px $primaryColor;
+      color: white;
+      font-family: $fonte-base;
+      font-weight: $font-regular;
+      @include font-size(20px);
+
+      &::before {
+        height: 15px;
+        width: 20px;
+        content: "";
+        position: absolute;
+        right: 11px;
+        top: 25px;
+        @include transition(0.5s);
+        @include rotate(0);
+        background: url("./img/icons/arrow-down.png") no-repeat;
+      }
+
+      &.active {
+        background-color: $primaryColor;
+        transition: 0.4s;
+
+        &::before {
+          @include rotate(-180);
+          top: 18px;
+          right: 21px;
+        }
+
+        span {
+          color: #fff;
+        }
+      }
+
+      span {
+        color: white;
+        font-size: 1.25rem;
+      }
+    }
+
+    .accordion_content {
+      overflow-y: hidden;
+      padding: 0;
+      display: none;
+    }
+
+  }
+}
