@@ -5,7 +5,7 @@
         "fields": [
             {
                 "key": "field_5c5836a39f742",
-                "label": "FAQs",
+                "label": "FAQ Group",
                 "name": "faqs",
                 "type": "repeater",
                 "instructions": "",
@@ -20,13 +20,13 @@
                 "min": 0,
                 "max": 0,
                 "layout": "block",
-                "button_label": "",
+                "button_label": "Add FAQ Group",
                 "sub_fields": [
                     {
-                        "key": "field_5c5836a3a4750",
-                        "label": "Title",
-                        "name": "title",
-                        "type": "text",
+                        "key": "field_5cc22e73ecbb2",
+                        "label": "Add text before questions and answers?",
+                        "name": "add_text_before_questions_and_answers",
+                        "type": "select",
                         "instructions": "",
                         "required": 0,
                         "conditional_logic": 0,
@@ -35,20 +35,36 @@
                             "class": "",
                             "id": ""
                         },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "choices": {
+                            "none": "None",
+                            "yes": "Yes"
+                        },
+                        "default_value": [
+                            "None"
+                        ],
+                        "allow_null": 0,
+                        "multiple": 0,
+                        "ui": 0,
+                        "return_format": "value",
+                        "ajax": 0,
+                        "placeholder": ""
                     },
                     {
-                        "key": "field_5c5836a3a4793",
-                        "label": "Description",
-                        "name": "description",
+                        "key": "field_5cc1fc7fd1b27",
+                        "label": "Text before FAQ Group",
+                        "name": "text_before_faq_group",
                         "type": "wysiwyg",
                         "instructions": "",
                         "required": 0,
-                        "conditional_logic": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5cc22e73ecbb2",
+                                    "operator": "==",
+                                    "value": "yes"
+                                }
+                            ]
+                        ],
                         "wrapper": {
                             "width": "",
                             "class": "",
@@ -57,8 +73,67 @@
                         "default_value": "",
                         "tabs": "all",
                         "toolbar": "full",
-                        "media_upload": 0,
+                        "media_upload": 1,
                         "delay": 0
+                    },
+                    {
+                        "key": "field_5cc1fc92d1b28",
+                        "label": "FAQ Group - Items",
+                        "name": "faq_group",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "block",
+                        "button_label": "Add Question and Answer",
+                        "sub_fields": [
+                            {
+                                "key": "field_5c5836a3a4750",
+                                "label": "Title",
+                                "name": "title",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5c5836a3a4793",
+                                "label": "Description",
+                                "name": "description",
+                                "type": "wysiwyg",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "tabs": "all",
+                                "toolbar": "full",
+                                "media_upload": 0,
+                                "delay": 0
+                            }
+                        ]
                     }
                 ]
             }
@@ -77,7 +152,9 @@
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
-        "hide_on_screen": "",
+        "hide_on_screen": [
+            "the_content"
+        ],
         "active": 1,
         "description": ""
     }
