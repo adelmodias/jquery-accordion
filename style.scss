@@ -14,11 +14,11 @@ $fontBase: Arial;
   margin-bottom: 50px;
 }
 
-#accordionMz {
-  .accordion_item {
+.accordion {
+  &__item {
     margin-bottom: 10px;
 
-    .accordion_header {
+    &__header {
       background-color: $primaryColor;
       padding: 15px;
       cursor: pointer;
@@ -53,7 +53,7 @@ $fontBase: Arial;
       }
     }
 
-    .accordion_content {
+    &__content {
       overflow-y: hidden;
       padding: 0;
       display: none;

@@ -1,7 +1,7 @@
-if ($('.accordion_header').length > 0) {
-  var active = 'active';
-  $('.accordion_header').click(function () {
+if ($(".accordion__item__header").length > 0) {
+  var active = "active";
+  $(".accordion__item__header").click(function () {
     $(this).toggleClass(active);
-    $(this).next('div').slideToggle(200);
+    $(this).next("div").slideToggle(200);
   });
 }
