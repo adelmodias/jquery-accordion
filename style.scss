@@ -1,52 +1,55 @@
+$primaryColor: #003349;
+$secondaryColor: #33A0FF;
+$fontBase: Arial;
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-family: Arial;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 #accordionMz {
   .accordion_item {
-    margin-top: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 
     .accordion_header {
       background-color: $primaryColor;
-      padding: ($gap - 1);
-      margin-bottom: 10px;
+      padding: 15px;
       cursor: pointer;
       position: relative;
-      min-height: 55px;
-      letter-spacing: 0.4px;
-      border-bottom: solid 2px $primaryColor;
       color: white;
-      font-family: $fonte-base;
-      font-weight: $font-regular;
-      @include font-size(20px);
+      font-family: $fontBase;
+      font-weight: 400;
+      font-size: 20px;
 
       &::before {
         height: 15px;
-        width: 20px;
+        width: 15px;
         content: "";
         position: absolute;
-        right: 11px;
-        top: 25px;
-        @include transition(0.5s);
-        @include rotate(0);
-        background: url("./img/icons/arrow-down.png") no-repeat;
+        right: 15px;
+        top: 15px;
+        transition: 0.5s all;
+        transform: rotate(45deg);
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
       }
 
       &.active {
-        background-color: $primaryColor;
+        background-color: $secondaryColor;
+        color: #fff;
         transition: 0.4s;
 
         &::before {
-          @include rotate(-180);
-          top: 18px;
-          right: 21px;
+          transform: rotate(-135deg);
+          top: 23px;
         }
-
-        span {
-          color: #fff;
-        }
-      }
-
-      span {
-        color: white;
-        font-size: 1.25rem;
       }
     }
 
